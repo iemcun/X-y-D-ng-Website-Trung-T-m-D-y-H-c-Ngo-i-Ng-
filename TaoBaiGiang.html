@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo bài giảng mới - ABC Center</title>
+    <link rel="stylesheet" href="TaoBaiGiang.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-left">
+            <div class="logo"><i class="fa-solid fa-graduation-cap"></i> <strong>ABC Center</strong></div>
+            <nav>
+                <a href="#">Hệ thống</a>
+                <a href="#" class="active">Quản lý bài giảng</a>
+                <a href="#">Lịch học</a>
+                <a href="#">Học viên</a>
+            </nav>
+        </div>
+        <div class="nav-right">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Tìm kiếm nhanh...">
+            </div>
+            <div class="user-profile">
+                <div class="user-text">
+                    <span class="name">Admin User</span>
+                    <span class="role">Quản trị viên</span>
+                </div>
+                <div class="avatar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title">TẠO BÀI GIẢNG MỚI</h1>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <div class="card">
+                    <div class="card-header blue">
+                        <i class="fa-solid fa-circle-info"></i> Thông tin bài giảng
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>TIÊU ĐỀ BÀI GIẢNG <span class="required">*</span></label>
+                            <input type="text" placeholder="Ví dụ: IELTS Writing Task 1 Introduction">
+                        </div>
+                        <div class="form-group">
+                            <label>MÔN HỌC / CHUYÊN MỤC <span class="required">*</span></label>
+                            <select>
+                                <option>-- Chọn môn học --</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>LOẠI BÀI GIẢNG <span class="required">*</span></label>
+                            <div class="type-selector">
+                                <button type="button" class="type-btn active">
+                                    <i class="fa-solid fa-circle-play"></i>
+                                    <span>VIDEO</span>
+                                </button>
+                                
+                                <button type="button" class="type-btn">
+                                    <i class="fa-solid fa-file-lines"></i>
+                                    <span>TÀI LIỆU</span>
+                                </button>
+                                
+                                <button type="button" class="type-btn">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span>BÀI TẬP</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="hint-box">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <div>
+                                <strong>MẸO NHỎ</strong>
+                                <p>Hãy chọn loại bài giảng phù hợp để tối ưu hóa trải nghiệm học tập của học viên. Hệ thống sẽ tự động điều chỉnh trình phát tương ứng.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="main-content">
+                <div class="card">
+                    <div class="card-header gray">
+                        <i class="fa-solid fa-pen-nib"></i> Nội dung chi tiết
+                        <i class="fa-solid fa-expand expand-icon"></i>
+                    </div>
+                    <div class="card-body">
+                        <div class="editor-container">
+                            <div class="editor-toolbar">
+                                <button><strong>B</strong></button>
+                                <button><i>I</i></button>
+                                <button><u>U</u></button>
+                                <span class="divider"></span>
+                                <button><i class="fa-solid fa-list-ul"></i></button>
+                                <button><i class="fa-solid fa-list-ol"></i></button>
+                                <span class="divider"></span>
+                                <button><i class="fa-solid fa-link"></i></button>
+                                <button><i class="fa-solid fa-image"></i></button>
+                                <button><i class="fa-solid fa-clapperboard"></i></button>
+                            </div>
+                            <textarea placeholder="Bắt đầu nhập nội dung bài giảng tại đây..."></textarea>
+                        </div>
+
+                        <div class="attachment-label">ĐÍNH KÈM TẬP TIN</div>
+                        <div class="attachment-grid">
+                            <div class="upload-zone">
+                                <i class="fa-solid fa-file-arrow-up"></i>
+                                <p>Kéo & thả hoặc <span>nhấn để chọn</span></p>
+                                <small>PDF, MP4, JPG (Max 50MB)</small>
+                            </div>                           
+                        </div>
+
+                        <div class="settings-grid">
+                            <div class="setting-item">
+                                <div class="setting-text">
+                                    <strong>Công khai bài giảng</strong>
+                                    <span>Học viên có thể thấy ngay</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-text">
+                                    <strong>Yêu cầu tuần tự</strong>
+                                    <span>Phải xong bài trước mới được xem</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-actions">
+                    <button class="btn-cancel">Hủy bỏ</button>
+                    <button class="btn-save"><i class="fa-solid fa-floppy-disk"></i> Lưu Bài Giảng</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+</body>
+<script>
+    const typeButtons = document.querySelectorAll('.type-btn');
+    typeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            typeButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+</script>
+</html>
