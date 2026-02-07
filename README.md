@@ -1,847 +1,288 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABC Center - Quản Lý Lịch Học</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <div class="dashboard-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="logo">
-                <i class="fas fa-graduation-cap"></i>
-                <div>
-                    <div class="logo-title">ABC CENTER</div>
-                    <div class="logo-subtitle">DASHBOARD</div>
-                </div>
-            </div>
-            
-            <nav class="nav-menu">
-                <a href="#" class="nav-item">
-                    <i class="fas fa-th-large"></i>
-                    <span>Tổng quan</span>
-                </a>
-                <a href="#" class="nav-item active">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Lịch học</span>
-                </a>
-                <a href="#" class="nav-item">
-                    <i class="fas fa-users"></i>
-                    <span>Lớp học</span>
-                </a>
-                <a href="#" class="nav-item">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <span>Giáo viên</span>
-                </a>
-                <a href="#" class="nav-item">
-                    <i class="fas fa-dollar-sign"></i>
-                    <span>Học phí</span>
-                </a>
-            </nav>
+<meta charset="UTF-8">
+<title>ABC Center – Đăng ký lớp học</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            <div class="user-profile">
-                <div class="user-avatar"></div>
-                <div class="user-info">
-                    <div class="user-name">Admin User</div>
-                    <div class="user-role">Quản trị viên</div>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Header -->
-            <header class="header">
-                <h1 class="page-title">QUẢN LÝ LỊCH HỌC</h1>
-                <div class="header-actions">
-                    <div class="search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Tìm kiếm lịch học...">
-                    </div>
-                    <button class="icon-btn">
-                        <i class="fas fa-bell"></i>
-                    </button>
-                    <button class="icon-btn">
-                        <i class="fas fa-cog"></i>
-                    </button>
-                </div>
-            </header>
-
-            <!-- Filter Section -->
-            <section class="filter-section">
-                <div class="filter-group">
-                    <label class="filter-label">XEM THEO CHI NHÁNH</label>
-                    <div class="select-wrapper">
-                        <select class="select-input">
-                            <option>Chi nhánh Quận 1</option>
-                            <option>Chi nhánh Quận 2</option>
-                            <option>Chi nhánh Quận 3</option>
-                        </select>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                </div>
-
-                <div class="filter-group">
-                    <label class="filter-label">THỜI GIAN</label>
-                    <div class="date-input-wrapper">
-                        <input type="text" value="Tuần này: 04/09 - 10/09" class="date-input">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                </div>
-
-                <div class="filter-group">
-                    <label class="filter-label">TRẠNG THÁI</label>
-                    <div class="status-filters">
-                        <label class="checkbox-label">
-                            <input type="checkbox" checked>
-                            <span>Sắp diễn ra</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox">
-                            <span>Đã kết thúc</span>
-                        </label>
-                    </div>
-                </div>
-
-                <button class="btn-primary">
-                    <i class="fas fa-plus"></i>
-                    TẠO LỊCH MỚI
-                </button>
-            </section>
-
-            <!-- Schedule List -->
-            <section class="schedule-section">
-                <div class="section-header">
-                    <div class="section-title">
-                        <i class="fas fa-list"></i>
-                        <h2>DANH SÁCH BUỔI HỌC HÔM NAY (05/09/2023)</h2>
-                    </div>
-                    <div class="session-count">12 BUỔI HỌC</div>
-                </div>
-
-                <div class="schedule-table">
-                    <div class="table-header">
-                        <div class="col-time">THỜI GIAN</div>
-                        <div class="col-class">LỚP HỌC / KHÓA HỌC</div>
-                        <div class="col-teacher">GIÁO VIÊN</div>
-                        <div class="col-room">PHÒNG</div>
-                        <div class="col-status">TRẠNG THÁI</div>
-                        <div class="col-action">THAO TÁC</div>
-                    </div>
-
-                    <div class="table-row">
-                        <div class="col-time">
-                            <div class="time-range">17:30 -<br>19:00</div>
-                        </div>
-                        <div class="col-class">
-                            <div class="class-name">Tiếng Anh Giao Tiếp Chuyên Sâu</div>
-                            <div class="class-code">Mã lớp: ABC-2023-09</div>
-                        </div>
-                        <div class="col-teacher">
-                            <i class="fas fa-user-circle teacher-icon"></i>
-                            <div>
-                                <div class="teacher-name">Ms. Thanh Thảo</div>
-                            </div>
-                        </div>
-                        <div class="col-room">
-                            <div>Phòng<br>302</div>
-                        </div>
-                        <div class="col-status">
-                            <span class="status-badge status-scheduled">ĐÃ ĐIỂM DANH</span>
-                        </div>
-                        <div class="col-action">
-                            <button class="btn-edit">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="table-row">
-                        <div class="col-time">
-                            <div class="time-range">19:15 -<br>20:45</div>
-                        </div>
-                        <div class="col-class">
-                            <div class="class-name">IELTS Foundation 4.5+</div>
-                            <div class="class-code">Mã lớp: IELTS-F-01</div>
-                        </div>
-                        <div class="col-teacher">
-                            <i class="fas fa-user-circle teacher-icon"></i>
-                            <div>
-                                <div class="teacher-name">Mr. Robert Chen</div>
-                            </div>
-                        </div>
-                        <div class="col-room">
-                            <div>Phòng<br>105</div>
-                        </div>
-                        <div class="col-status">
-                            <span class="status-badge status-waiting">CHỜ BẮT ĐẦU</span>
-                        </div>
-                        <div class="col-action">
-                            <button class="btn-edit">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="table-row">
-                        <div class="col-time">
-                            <div class="time-range">18:00 -<br>19:30</div>
-                        </div>
-                        <div class="col-class">
-                            <div class="class-name">English for Kids - Level 2</div>
-                            <div class="class-code">Mã lớp: KID-L2-05</div>
-                        </div>
-                        <div class="col-teacher">
-                            <i class="fas fa-user-circle teacher-icon"></i>
-                            <div>
-                                <div class="teacher-name">Ms. Diệu Linh</div>
-                            </div>
-                        </div>
-                        <div class="col-room">
-                            <div>Phòng<br>201</div>
-                        </div>
-                        <div class="col-status">
-                            <span class="status-badge status-upcoming">SẮP DIỄN RA</span>
-                        </div>
-                        <div class="col-action">
-                            <button class="btn-edit">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="table-row">
-                        <div class="col-time">
-                            <div class="time-range">08:00 -<br>11:00</div>
-                        </div>
-                        <div class="col-class">
-                            <div class="class-name">Lớp Toeic Cấp Tốc 750+</div>
-                            <div class="class-code">Mã lớp: TOEIC-750</div>
-                        </div>
-                        <div class="col-teacher">
-                            <i class="fas fa-user-circle teacher-icon"></i>
-                            <div>
-                                <div class="teacher-name">Mr. Minh Quân</div>
-                            </div>
-                        </div>
-                        <div class="col-room">
-                            <div>Phòng<br>404</div>
-                        </div>
-                        <div class="col-status">
-                            <span class="status-badge status-completed">ĐÃ KẾT THÚC</span>
-                        </div>
-                        <div class="col-action">
-                            <button class="btn-edit">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pagination -->
-                <div class="pagination">
-                    <div class="pagination-info">Hiển thị 4/12 buổi học</div>
-                    <div class="pagination-controls">
-                        <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
-                        <button class="page-btn active">1</button>
-                        <button class="page-btn">2</button>
-                        <button class="page-btn">3</button>
-                        <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer class="footer">
-                <p>© 2023 ABC Foreign Language Center. All rights reserved.</p>
-            </footer>
-        </main>
-    </div>
-</body>
-</html>
-***
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
-}
-
-.dashboard-container {
-    display: flex;
-    min-height: 100vh;
-}
-
-/* Sidebar Styles */
-.sidebar {
-    width: 240px;
-    background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    height: 100vh;
-    left: 0;
-    top: 0;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 24px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.logo i {
-    font-size: 32px;
-    background: white;
-    color: #2563eb;
-    padding: 8px;
-    border-radius: 8px;
-}
-
-.logo-title {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-.logo-subtitle {
-    font-size: 12px;
-    font-weight: 600;
-    opacity: 0.9;
-}
-
-.nav-menu {
-    flex: 1;
-    padding: 20px 0;
-}
-
-.nav-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 20px;
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.nav-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-}
-
-.nav-item.active {
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-    border-left: 4px solid white;
-}
-
-.nav-item i {
-    font-size: 18px;
-    width: 20px;
-}
-
-.user-profile {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.user-avatar {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-}
-
-.user-name {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.user-role {
-    font-size: 12px;
-    opacity: 0.8;
-}
-
-/* Main Content */
-.main-content {
-    margin-left: 240px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
+<style>
+*{box-sizing:border-box;font-family:Segoe UI,Arial}
+body{margin:0;background:#f3f6fb;color:#333}
 
 /* Header */
-.header {
-    background: white;
-    padding: 24px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+.header{
+    background:#fff;
+    padding:14px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #e5e7eb
+}
+.logo{font-weight:700;color:#2563eb}
+.nav a{
+    margin:0 12px;
+    text-decoration:none;
+    color:#555;
+    font-weight:500
+}
+.nav a.active{color:#2563eb;border-bottom:2px solid #2563eb;padding-bottom:6px}
+
+/* Layout */
+.container{
+    display:flex;
+    padding:30px 40px;
+    gap:30px
 }
 
-.page-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #2563eb;
-    letter-spacing: 0.5px;
+/* Sidebar */
+.sidebar{
+    width:280px;
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 2px 6px rgba(0,0,0,.05)
+}
+.sidebar h3{
+    background:#2563eb;
+    color:#fff;
+    padding:10px;
+    border-radius:8px;
+    font-size:15px
+}
+.info label{font-size:12px;color:#6b7280}
+.info div{
+    background:#f3f4f6;
+    padding:8px;
+    border-radius:6px;
+    margin-bottom:12px;
+    font-weight:600
+}
+.note{
+    background:#eff6ff;
+    padding:12px;
+    border-radius:8px;
+    font-size:13px
 }
 
-.header-actions {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+/* Main */
+.main{
+    flex:1;
+    background:#fff;
+    border-radius:12px;
+    padding:24px;
+    box-shadow:0 2px 6px rgba(0,0,0,.05)
+}
+.main-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center
+}
+.search{
+    padding:10px 14px;
+    border-radius:20px;
+    border:1px solid #ddd;
+    width:260px
 }
 
-.search-box {
-    display: flex;
-    align-items: center;
-    background: #f5f7fa;
-    padding: 10px 16px;
-    border-radius: 8px;
-    gap: 10px;
-    width: 280px;
+/* Filter */
+.filters{margin:16px 0}
+.filters button{
+    border:none;
+    background:#e5e7eb;
+    padding:6px 14px;
+    border-radius:20px;
+    margin-right:8px;
+    cursor:pointer;
+    font-weight:600
+}
+.filters button.active{
+    background:#2563eb;
+    color:#fff
 }
 
-.search-box i {
-    color: #9ca3af;
+/* Table */
+.table-header,.row{
+    display:grid;
+    grid-template-columns:2fr 1.5fr 2fr 1fr 1.3fr 1fr;
+    padding:14px 10px;
+    align-items:center
+}
+.table-header{
+    background:#1e40af;
+    color:#fff;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:700
+}
+.row{
+    border-bottom:1px solid #eee;
+    font-size:14px
+}
+.row:hover{background:#f9fafb}
+.code{font-size:12px;color:#6b7280}
+
+.btn{
+    padding:8px 14px;
+    border-radius:8px;
+    border:none;
+    font-weight:700;
+    cursor:pointer
+}
+.btn-register{
+    background:#e0edff;
+    color:#2563eb
+}
+.btn-selected{
+    background:#2563eb;
+    color:#fff
 }
 
-.search-box input {
-    border: none;
-    background: transparent;
-    outline: none;
-    width: 100%;
-    font-size: 14px;
-    color: #333;
+/* Footer select */
+.footer-select{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center
 }
+.summary{
+    display:flex;
+    gap:20px
+}
+.box{
+    border:1px solid #e5e7eb;
+    padding:12px 16px;
+    border-radius:10px;
+    font-weight:600
+}
+.confirm{
+    background:#2563eb;
+    color:#fff;
+    padding:14px 28px;
+    border:none;
+    border-radius:12px;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer
+}
+</style>
+</head>
 
-.search-box input::placeholder {
-    color: #9ca3af;
-}
+<body>
 
-.icon-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    border: none;
-    background: #f5f7fa;
-    color: #6b7280;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
+<div class="header">
+    <div class="logo">ABC Foreign Language Center</div>
+    <div class="nav">
+        <a href="#">Trang chủ</a>
+        <a class="active" href="#">Lớp học</a>
+        <a href="#">Lịch học</a>
+        <a href="#">Kết quả</a>
+    </div>
+</div>
 
-.icon-btn:hover {
-    background: #e5e7eb;
-    color: #2563eb;
-}
+<div class="container">
 
-/* Filter Section */
-.filter-section {
-    background: white;
-    padding: 24px 40px;
-    margin: 24px 40px;
-    border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    display: flex;
-    gap: 24px;
-    align-items: flex-end;
-}
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>👤 Thông tin học viên</h3>
+        <div class="info">
+            <label>HỌ VÀ TÊN</label>
+            <div>Nguyễn Văn A</div>
 
-.filter-group {
-    flex: 1;
-}
+            <label>MÃ HỌC VIÊN</label>
+            <div>ABC12345</div>
 
-.filter-label {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    color: #6b7280;
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
-}
+            <label>TRÌNH ĐỘ HIỆN TẠI</label>
+            <div>Intermediate (B1)</div>
+        </div>
 
-.select-wrapper {
-    position: relative;
-}
+        <div class="note">
+            <b>Lưu ý đăng ký</b>
+            <ul>
+                <li>Tối đa 3 lớp</li>
+                <li>Không trùng lịch</li>
+                <li>Hoàn phí trong 3 ngày</li>
+            </ul>
+        </div>
+    </div>
 
-.select-input {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #333;
-    background: white;
-    cursor: pointer;
-    appearance: none;
-    outline: none;
-}
+    <!-- Main -->
+    <div class="main">
+        <div class="main-header">
+            <h2>Chọn lớp học</h2>
+            <input class="search" placeholder="Tìm tên lớp, giáo viên...">
+        </div>
 
-.select-wrapper i {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #6b7280;
-    pointer-events: none;
-    font-size: 12px;
-}
+        <div class="filters">
+            <button class="active">Tất cả</button>
+            <button>IELTS</button>
+            <button>TOEIC</button>
+            <button>Giao tiếp</button>
+            <button>Thiếu nhi</button>
+        </div>
 
-.date-input-wrapper {
-    position: relative;
-}
+        <div class="table-header">
+            <div>TÊN LỚP</div>
+            <div>GIÁO VIÊN</div>
+            <div>LỊCH HỌC</div>
+            <div>PHÒNG</div>
+            <div>NGÀY BẮT ĐẦU</div>
+            <div>THAO TÁC</div>
+        </div>
 
-.date-input {
-    width: 100%;
-    padding: 12px 40px 12px 16px;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #333;
-    background: white;
-    outline: none;
-}
+        <div class="row">
+            <div>
+                <b>IELTS Intensive 6.5+</b>
+                <div class="code">Code: ILT-65-01</div>
+            </div>
+            <div>Mr. John Smith</div>
+            <div>Thứ 2,4,6 (18:00 - 20:00)</div>
+            <div>Room 402</div>
+            <div>15/10/2023</div>
+            <div><button class="btn btn-register" onclick="selectClass(this,'ILT-65-01')">Đăng ký</button></div>
+        </div>
 
-.date-input-wrapper i {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #2563eb;
-}
+        <div class="row">
+            <div>
+                <b>Advanced Grammar</b>
+                <div class="code">Code: GRM-ADV-02</div>
+            </div>
+            <div>Ms. Sarah Connor</div>
+            <div>Thứ 3,5 (19:30 - 21:00)</div>
+            <div>Room 105</div>
+            <div>20/10/2023</div>
+            <div><button class="btn btn-selected">Đã chọn</button></div>
+        </div>
 
-.status-filters {
-    display: flex;
-    gap: 16px;
-}
+        <div class="row">
+            <div>
+                <b>Business English 101</b>
+                <div class="code">Code: BUS-EN-11</div>
+            </div>
+            <div>Mr. Robert P.</div>
+            <div>Thứ 7,CN (08:00 - 10:00)</div>
+            <div>Lab 01</div>
+            <div>12/10/2023</div>
+            <div><button class="btn btn-register" onclick="selectClass(this,'BUS-EN-11')">Đăng ký</button></div>
+        </div>
 
-.checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    color: #333;
-}
+        <div class="footer-select">
+            <div class="summary">
+                <div class="box">Lớp đã chọn<br><b id="selected">01 lớp</b></div>
+                <div class="box">Ước tính học phí<br><b>3,500,000 VND</b></div>
+            </div>
+            <button class="confirm">XÁC NHẬN ĐĂNG KÝ LỚP</button>
+        </div>
+    </div>
 
-.checkbox-label input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-    accent-color: #2563eb;
-}
+</div>
 
-.btn-primary {
-    background: #2563eb;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+<script>
+function selectClass(btn, code){
+    btn.innerText="Đã chọn";
+    btn.className="btn btn-selected";
+    alert("Đã chọn lớp: " + code);
 }
+</script>
 
-.btn-primary:hover {
-    background: #1d4ed8;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
-}
-
-/* Schedule Section */
-.schedule-section {
-    background: white;
-    margin: 0 40px 40px 40px;
-    border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-}
-
-.section-header {
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-    color: white;
-    padding: 20px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.section-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.section-title h2 {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-}
-
-.session-count {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-/* Table Styles */
-.schedule-table {
-    padding: 24px 30px;
-}
-
-.table-header {
-    display: grid;
-    grid-template-columns: 100px 2fr 1.5fr 100px 140px 80px;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 2px solid #e5e7eb;
-    margin-bottom: 16px;
-}
-
-.table-header > div {
-    font-size: 11px;
-    font-weight: 700;
-    color: #6b7280;
-    letter-spacing: 0.5px;
-}
-
-.table-row {
-    display: grid;
-    grid-template-columns: 100px 2fr 1.5fr 100px 140px 80px;
-    gap: 16px;
-    padding: 20px 0;
-    border-bottom: 1px solid #f3f4f6;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.table-row:hover {
-    background: #f9fafb;
-}
-
-.time-range {
-    font-size: 15px;
-    font-weight: 600;
-    color: #2563eb;
-    line-height: 1.4;
-}
-
-.class-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 4px;
-}
-
-.class-code {
-    font-size: 12px;
-    color: #9ca3af;
-}
-
-.col-teacher {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.teacher-icon {
-    font-size: 32px;
-    color: #2563eb;
-}
-
-.teacher-name {
-    font-size: 13px;
-    color: #1f2937;
-}
-
-.col-room {
-    font-size: 14px;
-    font-weight: 600;
-    color: #4b5563;
-    line-height: 1.4;
-}
-
-.status-badge {
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-}
-
-.status-scheduled {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.status-waiting {
-    background: #fed7aa;
-    color: #92400e;
-}
-
-.status-upcoming {
-    background: #dbeafe;
-    color: #1e40af;
-}
-
-.status-completed {
-    background: #e5e7eb;
-    color: #4b5563;
-}
-
-.btn-edit {
-    width: 36px;
-    height: 36px;
-    border-radius: 6px;
-    border: none;
-    background: #dbeafe;
-    color: #2563eb;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.btn-edit:hover {
-    background: #2563eb;
-    color: white;
-}
-
-/* Pagination */
-.pagination {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 30px;
-    border-top: 1px solid #f3f4f6;
-}
-
-.pagination-info {
-    font-size: 13px;
-    color: #6b7280;
-}
-
-.pagination-controls {
-    display: flex;
-    gap: 8px;
-}
-
-.page-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 6px;
-    border: 1px solid #e5e7eb;
-    background: white;
-    color: #6b7280;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.page-btn:hover {
-    border-color: #2563eb;
-    color: #2563eb;
-}
-
-.page-btn.active {
-    background: #2563eb;
-    color: white;
-    border-color: #2563eb;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 24px;
-    color: #9ca3af;
-    font-size: 13px;
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .table-header,
-    .table-row {
-        grid-template-columns: 90px 1.5fr 1.2fr 90px 120px 70px;
-        gap: 12px;
-    }
-    
-    .filter-section {
-        flex-wrap: wrap;
-    }
-    
-    .filter-group {
-        min-width: 200px;
-    }
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 70px;
-    }
-    
-    .main-content {
-        margin-left: 70px;
-    }
-    
-    .logo-title,
-    .logo-subtitle,
-    .nav-item span,
-    .user-info {
-        display: none;
-    }
-    
-    .nav-item {
-        justify-content: center;
-    }
-    
-    .filter-section {
-        padding: 16px 20px;
-        margin: 16px 20px;
-    }
-    
-    .schedule-section {
-        margin: 0 20px 20px 20px;
-    }
-    
-    .header {
-        padding: 16px 20px;
-    }
-    
-    .search-box {
-        width: 200px;
-    }
-}
+</body>
+</html>
