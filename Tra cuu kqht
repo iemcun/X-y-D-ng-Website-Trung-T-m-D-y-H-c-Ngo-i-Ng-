@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>ABC Center</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
+
+/* LOGIN */
+.login-page{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#f2f4f8;
+}
+
+.login-box{
+  background:white;
+  padding:40px;
+  width:300px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.login-box input{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+}
+
+.login-box button{
+  width:100%;
+  padding:10px;
+  background:#2c6bed;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+#error{
+  color:red;
+}
+
+/* DASHBOARD */
+.dashboard{
+  display:none;
+}
+
+.container{
+  display:flex;
+  height:100vh;
+}
+
+.sidebar{
+  width:250px;
+  background:#2c6bed;
+  color:white;
+  padding:20px;
+}
+
+.main{
+  flex:1;
+  padding:40px;
+  background:#f2f4f8;
+}
+
+table{
+  width:100%;
+  background:white;
+  border-collapse:collapse;
+}
+
+th, td{
+  padding:15px;
+  border-bottom:1px solid #ddd;
+}
+
+.pass{
+  color:green;
+  font-weight:bold;
+}
+
+.improve{
+  color:orange;
+  font-weight:bold;
+}
+
+.download{
+  margin-top:20px;
+  padding:10px 20px;
+  background:#2c6bed;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+<div class="login-page" id="loginPage">
+  <div class="login-box">
+    <h2>ABC Center Login</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+
+    <p id="error"></p>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+
+  <div class="container">
+
+    <div class="sidebar">
+      <h3>Châu Văn Quy</h3>
+      <p>ID: HV-123456</p>
+      <div>Tiếng Anh Giao Tiếp A2</div>
+      <div>Overall: 7.5 / 10</div>
+      <div>Top 30%</div>
+    </div>
+
+    <div class="main">
+      <h1>KẾT QUẢ HỌC TẬP</h1>
+
+      <table>
+        <tr>
+          <th>Module</th>
+          <th>Score</th>
+          <th>Status</th>
+        </tr>
+
+        <tr>
+          <td>Listening</td>
+          <td>8.5</td>
+          <td class="pass">ĐẠT</td>
+        </tr>
+
+        <tr>
+          <td>Speaking</td>
+          <td>8.0</td>
+          <td class="pass">ĐẠT</td>
+        </tr>
+
+        <tr>
+          <td>Reading</td>
+          <td>7.5</td>
+          <td class="improve">CẦN CẢI THIỆN</td>
+        </tr>
+
+        <tr>
+          <td>Writing</td>
+          <td>6.5</td>
+          <td class="improve">CẦN CẢI THIỆN</td>
+        </tr>
+
+      </table>
+
+      <button class="download">Download Academic Report</button>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function login(){
+
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+
+  if(user === "admin" && pass === "123"){
+    document.getElementById("loginPage").style.display = "none";
+    document.getElementById("dashboard").style.display = "block";
+  } else {
+    document.getElementById("error").innerText = "Sai tài khoản hoặc mật khẩu!";
+  }
+}
+</script>
+
+</body>
+</html>
